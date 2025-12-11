@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+
+@keyframes typing {
+  from {
+    width: 0;
+    visibility: hidden;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: white;
+  }
+}
+
+/* 2. Configuramos el Tema */
+@theme {
+  /* Mantenemos tu fuente actual */
+  --font-sans: 'Montserrat', sans-serif;
+
+  /* Aquí creamos la clase "animate-typing".
+     La sintaxis es: --animate-<nombre>: <parametros>;
+  */
+  --animate-typing: typing 4s steps(27) infinite alternate, blink .7s infinite;
+}
