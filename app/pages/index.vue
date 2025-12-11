@@ -122,6 +122,8 @@ interface Proyect {
     title: string;
     srcImg: string;
     technology: Array<string>
+    github?: string;
+    demo?: string;    
 }
 
 const languages: Language[] = [
@@ -140,9 +142,9 @@ const languages: Language[] = [
 ];
 
 const proyects: Proyect[] = [
-    {id:1, title: 'ToDo App', srcImg: "/img/toDo-1.png", technology: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Quasar', 'Pinia']},
-    {id:2, title: 'Ecommerce', srcImg: "/img/ecommerce-1.png", technology: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Vuetify', 'Pinia', 'Firebase', 'Stripe']},
-    {id:3, title: 'Portafolio', srcImg: "/img/portafolio-1.png", technology: ['HTML', 'CSS', 'Typescript', 'Vue.js', 'Nuxt', 'Tailwind']},
+    {id:1, title: 'ToDo App', srcImg: "/img/toDo-1.png", technology: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Quasar', 'Pinia'], github: "https://github.com/Anib04/ToDo"},
+    {id:2, title: 'Ecommerce', srcImg: "/img/ecommerce-1.png", technology: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Vuetify', 'Pinia', 'Firebase', 'Stripe'], github: "https://github.com/Anib04/E-Commerce", demo:"https://am-commerce.netlify.app/"},
+    {id:3, title: 'Portafolio', srcImg: "/img/portafolio-1.png", technology: ['HTML', 'CSS', 'Typescript', 'Vue.js', 'Nuxt', 'Tailwind'], github:"https://github.com/Anib04/Portafolio"},
 ]
 
 
