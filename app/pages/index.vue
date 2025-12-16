@@ -1,55 +1,63 @@
 
 <template>
     <myHeader />
-    <section class="h-screen bg-[url(~/assets/img/bg.jpg)] bg-cover text-center flex items-center" ref="sectionRef">
-        <UContainer class="flex justify-center items-center " >
-            <UCard>
-                    <h1 class="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-5xl text-white font-bold">
-                        Anibal Bello Desarrollador Web
-                    </h1>
+
+    <section class="min-h-screen bg-[url(~/assets/img/bg.jpg)] bg-cover bg-center flex items-center justify-center p-4" ref="sectionRef">
+        <UContainer class="w-full flex justify-center items-center">
+            <UCard class="w-full max-w-4xl bg-opacity-90 backdrop-blur-sm"> 
+                <h1 class="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-2 text-2xl md:text-5xl text-white font-bold mx-auto w-fit">
+                    Anibal Bello Desarrollador Frontend
+                </h1>
             </UCard>
         </UContainer>
     </section>
+
     <USeparator size="lg" />
-    <section ref="sectionRef">
-        <UContainer id="aboutMe" class="mt-10 flex items-stretch justify-evenly gap-x-6 h-screen mb-10 border-3 rounded-md p-8">
-            <UCard class="grid bg-gray-800 p-4 rounded-lg shadow-lg" :class="[baseClass, 
-                'delay-300', 
-                isSectionVisible ? visibleClass : hiddenClass]">
-                            <p class="text-lg text-white wrap" :class="[baseClass, 
-                'delay-450', 
-                isSectionVisible ? visibleClass : hiddenClass]" 
-            >
-                        Soy Anibal Bello, un Desarrollador Frontend
-                        Con más de 2 años de experiencia, apasionado por construir soluciones web que sean tanto funcionales como elegantes. Mi especialización es el ecosistema moderno de JavaScript, y mi stack principal es Vue.js (Vue 3), TypeScript y Pinia.
-                        <br>
-                        Mi enfoque no es solo escribir código, sino construir sistemas. Disfruto el desafío de traducir diseños de alta fidelidad desde Figma  a componentes de código limpio y mantenible. Tengo experiencia demostrable en la implementación de librerías de componentes de nivel empresarial como Vuetify y Quasar Framework
-                        <br>
-                        En mis proyectos anteriores, me he centrado en la optimización del rendimiento, logrando reducir los tiempos de carga en un 25% mediante una gestión de estado eficiente con Pinia. También soy un firme defensor de la web inclusiva, habiendo mejorado la accesibilidad (WCAG) de aplicaciones en un 40%. Mi experiencia incluye la integración fluida con APIs REST y un dominio completo del control de versiones con Git.
-                        <br>
-                        Estoy acostumbrado a la cadencia del desarrollo profesional, trabajando en entornos Ágiles (Scrum/Kanban)  donde la colaboración, la comunicación efectiva y la entrega continua de valor son clave.
-                    </p>
+
+    <section ref="sectionRef" class="py-20 bg-gray-900">
+        <UContainer id="aboutMe" class="flex flex-col-reverse md:flex-row items-center justify-between gap-10">
+            
+            <UCard class="w-full md:w-2/3 bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700" 
+                :class="[baseClass, 'delay-300', isSectionVisible ? visibleClass : hiddenClass]">
+                
+                <h3 class="text-2xl font-bold text-primary mb-4 block md:hidden">Sobre Mí</h3>
+                
+                <p class="text-base md:text-lg text-gray-300 leading-relaxed text-justify" 
+                   :class="[baseClass, 'delay-450', isSectionVisible ? visibleClass : hiddenClass]">
+                    Soy Anibal Bello, un Desarrollador Frontend con más de 2 años de experiencia...
+                    ...entrega continua de valor son clave.
+                </p>
             </UCard>
-            <img src="~/assets/img/IMG_20240122_094122_077.png" size="md" alt="Anibal Bello" class="rounded-full" :class="[baseClass, 
-        'delay-600', 
-        isSectionVisible ? visibleClass : hiddenClass]" />
+
+            <div class="w-48 h-48 md:w-80 md:h-80 flex-shrink-0" 
+                 :class="[baseClass, 'delay-600', isSectionVisible ? visibleClass : hiddenClass]">
+                 <img src="~/assets/img/IMG_20240122_094122_077.png" 
+                     alt="Anibal Bello" 
+                     class="w-full h-full object-cover rounded-full border-4 border-primary shadow-2xl" />
+            </div>
+
         </UContainer>
     </section>   
+
     <USeparator size="lg" />
-    <section ref="gridRef">
-        <UContainer id="habilitys" class="mt-10 flex flex-col justify-center items-center gap-x-6 mb-10">
-            <h2 class="text-4xl font-bold mb-1.5">Habilidades</h2>
-            <div class="mt-5 flex gap-5 flex-wrap justify-center items-center content-center" >
-                <UCard v-for="(language, index) in languages" class="w-1/5 p-4 flex flex-col justify-center items-center  transition-all duration-700 transform" :key="language.id"
+
+    <section ref="gridRef" class="py-20 bg-gray-950">
+        <UContainer id="habilitys" class="flex flex-col items-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white">Habilidades</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 w-full">
+                <UCard v-for="(language, index) in languages" :key="language.id"
+                    class="flex flex-col justify-center items-center text-center transition-all duration-700 hover:border-primary group" 
                     :class="isGridVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'"
-      :style="{ transitionDelay: `${index * 150}ms` }"
+                    :style="{ transitionDelay: `${index * 100}ms` }"
                 >
                     <template #header>
-                        <UIcon :name="language.icon" />
-                            {{ language.name }}
+                        <div class="flex flex-col items-center gap-2">
+                            <UIcon :name="language.icon" class="w-8 h-8 md:w-10 md:h-10 text-gray-400 group-hover:text-primary transition-colors" />
+                            <span class="font-bold text-sm md:text-base">{{ language.name }}</span>
+                        </div>
                     </template>
-                    <span>
-
+                    <span class="text-xs text-gray-500 font-mono uppercase tracking-wider">
                         {{ language.level }}
                     </span>
                 </UCard>
@@ -57,34 +65,45 @@
             
         </UContainer>
     </section>   
-    <section ref="proyectRef">
-    <UContainer id="proyects" class="mt-10 flex flex-col justify-center items-stretch gap-x-6 mb-10 h-screen" >
-        <h2 class="text-4xl font-bold mb-1.5 text-center">Proyectos</h2>
-        <div class="flex gap-10 wrap justify-evenly">
-            <UCard v-for="(proyect, index) in proyects" :key="proyect.id"  class="grow w-1/4 items-stretch flex flex-col transition-all duration-700 transform" 
+
+    <section ref="proyectRef" class="py-20 bg-gray-900">
+        <UContainer id="proyects" class="min-h-screen flex flex-col">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center text-white">Proyectos</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <UCard v-for="(proyect, index) in proyects" :key="proyect.id"  
+                    class="flex flex-col h-full transition-all duration-700 hover:shadow-primary/20 hover:shadow-xl" 
                     :class="isProyectVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'"
-      :style="{ transitionDelay: `${index * 300}ms` }" >
-      
-                <template #header>
-                    <span class="font-semibold">{{ proyect.title }}</span>
-                </template>
+                    :style="{ transitionDelay: `${index * 200}ms` }" >
+            
+                    <template #header>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-lg truncate">{{ proyect.title }}</span>
+                            </div>
+                    </template>
 
-                <div class="flex justify-center grow items-stretch h-full">
-        
+                    <div class="relative w-full aspect-video overflow-hidden rounded-md bg-gray-800">
+                        <img :src="proyect.srcImg" :alt="proyect.title" class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
+                    </div>
                     
-                    <img :src="proyect.srcImg" :alt="proyect.title" class="object-cover w-full h-auto rounded-lg" />
-        
-                </div>
-                <template #footer>
-                    <UButton color="primary" class="w-full justify-center rounded-none px-4 py-3 bg-blue-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500" @click="openModal(proyect)">Ver Proyecto</UButton>
-                </template>
-            </UCard>
-        </div>
-    </UContainer>
+                    <template #footer>
+                        <UButton 
+                            block
+                            color="primary" 
+                            variant="solid"
+                            class="transition-transform active:scale-95" 
+                            @click="openModal(proyect)"
+                        >
+                            Ver Detalles
+                        </UButton>
+                    </template>
+                </UCard>
+            </div>
+        </UContainer>
     </section>  
-    <DescriptionModal v-model:open="showModal" :theProyect="proyectShow" ">
 
-  </DescriptionModal> 
+    <LazyDescriptionModal v-model:open="showModal" :theProyect="proyectShow" />
+
 </template>
 
 <script setup lang="ts">

@@ -29,5 +29,5 @@
   /* Aquí creamos la clase "animate-typing".
      La sintaxis es: --animate-<nombre>: <parametros>;
   */
-  --animate-typing: typing 4s steps(27) infinite alternate, blink .7s infinite;
+  --animate-typing: typing 4s steps(24) infinite alternate, blink .7s infinite;
 }
