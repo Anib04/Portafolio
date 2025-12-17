@@ -1,5 +1,8 @@
 
 <template>
+    <div class="overflow-x-hidden">
+
+    
     <myHeader />
 
     <section class="min-h-screen bg-[url(~/assets/img/bg.jpg)] bg-cover bg-center flex items-center justify-center p-4" ref="sectionRef">
@@ -103,7 +106,7 @@
     </section>  
 
     <LazyDescriptionModal v-model:open="showModal" :theProyect="proyectShow" />
-
+    </div>
 </template>
 
 <script setup lang="ts">
