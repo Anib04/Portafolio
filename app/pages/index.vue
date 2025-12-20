@@ -5,7 +5,7 @@
     <myHeader />
 
     <section class="min-w-screen min-h-screen bg-[url(~/assets/img/bg.jpg)] bg-cover bg-center flex items-center justify-center p-4" ref="sectionRef">
-        <UContainer class="w-full flex justify-center items-center">
+        <UContainer class="min-w-screen  w-full flex justify-center items-center">
             <UCard class="w-full max-w-4xl bg-opacity-90 backdrop-blur-sm"> 
                 <h1 class="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-2 text-md md:text-4xl text-white font-bold mx-auto w-fit lg:text-5xl">
                     Anibal Bello Desarrollador Frontend
@@ -36,7 +36,10 @@
 
             <div class="w-48 h-48 md:w-80 md:h-80 flex-shrink-0" 
                  :class="[baseClass, 'delay-600', isSectionVisible ? visibleClass : hiddenClass]">
-                 <img src="~/assets/img/IMG_20240122_094122_077.png" 
+                 <NuxtImg src="img/perfil.png"
+                     format="webp"
+                     sizes="100vw sm:50vw md:400px"
+                     loading="lazy" 
                      alt="Anibal Bello" 
                      class="w-full h-full object-cover rounded-full border-4 border-primary shadow-2xl" />
             </div>
@@ -88,7 +91,13 @@
                     </template>
 
                     <div class="relative w-full rounded-md bg-gray-800">
-                        <img :src="proyect.srcImg" :alt="proyect.title" class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
+                        <NuxtImg 
+                            :src="proyect.srcImg"
+                            :alt="proyect.title" 
+                            format="webp"
+                            sizes="100vw sm:50vw md:400px"
+                            loading="lazy" 
+                            class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
                     </div>
                     
                     <template #footer>
@@ -167,7 +176,7 @@ const languages: Language[] = [
 const proyects: Proyect[] = [
     {id:1, title: 'ToDo App', srcImg: "/img/toDo-1.png", technology: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Quasar', 'Pinia'], github: "https://github.com/Anib04/ToDo"},
     {id:2, title: 'Ecommerce', srcImg: "/img/ecommerce-1.png", technology: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Vuetify', 'Pinia', 'Firebase', 'Stripe'], github: "https://github.com/Anib04/E-Commerce", demo:"https://am-commerce.netlify.app/"},
-    {id:3, title: 'Portafolio', srcImg: "/img/portafolio-1.png", technology: ['HTML', 'CSS', 'Typescript', 'Vue.js', 'Nuxt', 'Tailwind'], github:"https://github.com/Anib04/Portafolio"},
+    {id:3, title: 'Portafolio', srcImg: "/img/portafolio-1.png", technology: ['HTML', 'CSS', 'Typescript', 'Vue.js', 'Nuxt', 'Tailwind'], github:"https://github.com/Anib04/Portafolio", demo:"https://portfolioanib.netlify.app/"},
 ]
 
 
