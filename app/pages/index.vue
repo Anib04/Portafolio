@@ -1,14 +1,13 @@
 
 <template>
-    <div class="overflow-x-hidden">
 
     
     <myHeader />
 
-    <section class="min-h-screen bg-[url(~/assets/img/bg.jpg)] bg-cover bg-center flex items-center justify-center p-4" ref="sectionRef">
+    <section class="min-w-screen min-h-screen bg-[url(~/assets/img/bg.jpg)] bg-cover bg-center flex items-center justify-center p-4" ref="sectionRef">
         <UContainer class="w-full flex justify-center items-center">
             <UCard class="w-full max-w-4xl bg-opacity-90 backdrop-blur-sm"> 
-                <h1 class="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-2 text-2xl md:text-5xl text-white font-bold mx-auto w-fit">
+                <h1 class="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-2 text-md md:text-4xl text-white font-bold mx-auto w-fit lg:text-5xl">
                     Anibal Bello Desarrollador Frontend
                 </h1>
             </UCard>
@@ -17,18 +16,21 @@
 
     <USeparator size="lg" />
 
-    <section ref="sectionRef" class="py-20 bg-gray-900">
-        <UContainer id="aboutMe" class="flex flex-col-reverse md:flex-row items-center justify-between gap-10">
+    <section ref="sectionRef" class="min-w-screen min-h-screen  py-20 bg-gray-900 ">
+        <UContainer id="aboutMe" class="flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
             
-            <UCard class="w-full md:w-2/3 bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700" 
+            <UCard class="w-full lg:w-2/3 bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700" 
                 :class="[baseClass, 'delay-300', isSectionVisible ? visibleClass : hiddenClass]">
                 
                 <h3 class="text-2xl font-bold text-primary mb-4 block md:hidden">Sobre Mí</h3>
                 
                 <p class="text-base md:text-lg text-gray-300 leading-relaxed text-justify" 
                    :class="[baseClass, 'delay-450', isSectionVisible ? visibleClass : hiddenClass]">
-                    Soy Anibal Bello, un Desarrollador Frontend con más de 2 años de experiencia...
-                    ...entrega continua de valor son clave.
+                    Soy un desarrollador apasionado por la arquitectura de software limpia y escalable. Mi especialidad es Vue.js (Vue 3 + Composition API), donde combino la potencia de TypeScript y Pinia para construir aplicaciones robustas, modulares y fáciles de mantener.
+                    <br>
+                    Más allá de escribir código, me enfoco en la calidad del producto final: desde la optimización del rendimiento con Vite hasta la implementación de buenas prácticas de UI/UX. Me caracterizo por mi capacidad de adaptación rápida a nuevos entornos y mi enfoque proactivo para resolver desafíos técnicos complejos.
+                    <br>
+                    <span>Mi Stack Principal:</span> Vue.js, TypeScript, Tailwind CSS, Firebase, Git.
                 </p>
             </UCard>
 
@@ -44,7 +46,7 @@
 
     <USeparator size="lg" />
 
-    <section ref="gridRef" class="py-20 bg-gray-950">
+    <section ref="gridRef" class="min-w-screen min-h-screen  py-20 bg-gray-950">
         <UContainer id="habilitys" class="flex flex-col items-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white">Habilidades</h2>
             
@@ -69,8 +71,8 @@
         </UContainer>
     </section>   
 
-    <section ref="proyectRef" class="py-20 bg-gray-900">
-        <UContainer id="proyects" class="min-h-screen flex flex-col">
+    <section ref="proyectRef" class="min-w-screen min-h-screen  py-20 bg-gray-900">
+        <UContainer id="proyects" class="min-h-screen flex flex-col w-full">
             <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center text-white">Proyectos</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -85,7 +87,7 @@
                             </div>
                     </template>
 
-                    <div class="relative w-full aspect-video overflow-hidden rounded-md bg-gray-800">
+                    <div class="relative w-full rounded-md bg-gray-800">
                         <img :src="proyect.srcImg" :alt="proyect.title" class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
                     </div>
                     
@@ -106,7 +108,6 @@
     </section>  
 
     <LazyDescriptionModal v-model:open="showModal" :theProyect="proyectShow" />
-    </div>
 </template>
 
 <script setup lang="ts">

@@ -1,9 +1,9 @@
 <template>
   <UModal :title="theProyect?.title" :transition="true" >
     <template #body>
-      <div class="flex justify-evenly gap-4 grow items-stretch h-full">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-10">
         
-                    <div class="w-1/2 m-8">
+                    <div class="w-full md:w-1/2 m-8">
                         <UCarousel
                             v-slot="{ item }"
                             :items="imagenesCarrousel"
