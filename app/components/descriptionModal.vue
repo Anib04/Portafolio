@@ -53,8 +53,6 @@ const props = defineProps<{
     theProyect: Proyect | null;
 }>();
 
-// ... (dentro de < setup>)
-
 
 const imagenesCarrousel = computed<string[]>(() => {
   const folderName = props.theProyect?.title.replace(/\s+/g, '_').toLowerCase();
@@ -81,8 +79,6 @@ const imagenesCarrousel = computed<string[]>(() => {
     // Usamos el predicado de tipo para convencer a TypeScript de que eliminamos los undefined.
     .filter((item): item is string => typeof item === 'string'); // <-- 🚨 Filtrado y Aserción Fuerte
 
-    console.log(files);
-    
   return files;
 });
 

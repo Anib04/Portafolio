@@ -9,6 +9,6 @@
     description: 'Desarrollador web especializado en Vue, Nuxt y experiencias modernas.',
     ogTitle: 'Portafolio de Anib04',
     ogDescription: 'Mira mis proyectos y habilidades.',
-    ogImage: '~/assets/img/IMG_20240122_094122_077.png',
+    ogImage: '/img/perfil.png',
   })
 </script>

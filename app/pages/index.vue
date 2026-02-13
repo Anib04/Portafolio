@@ -177,6 +177,7 @@ const proyects: Proyect[] = [
     {id:1, title: 'ToDo App', srcImg: "/img/toDo-1.png", technology: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Quasar', 'Pinia'], github: "https://github.com/Anib04/ToDo"},
     {id:2, title: 'Ecommerce', srcImg: "/img/ecommerce-1.png", technology: ['HTML', 'CSS', 'Javascript', 'Vue.js', 'Vuetify', 'Pinia', 'Firebase', 'Stripe'], github: "https://github.com/Anib04/E-Commerce", demo:"https://am-commerce.netlify.app/"},
     {id:3, title: 'Portafolio', srcImg: "/img/portafolio-1.png", technology: ['HTML', 'CSS', 'Typescript', 'Vue.js', 'Nuxt', 'Tailwind'], github:"https://github.com/Anib04/Portafolio", demo:"https://portfolioanib.netlify.app/"},
+    {id: 4, title: 'Inventario', srcImg: "/img/inventario-1.png", technology: ['HTML', 'CSS', 'Javascript', 'PHP'], github: "https://github.com/Anib04/Inventario", demo:"https://inventary.infinityfree.me/index.php?vista=login"}
 ]
 
 
